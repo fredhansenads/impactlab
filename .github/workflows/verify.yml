@@ -1,0 +1,25 @@
+name: Verify
+on: [push, pull_request]
+jobs:
+  flutter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.47.4'
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test
+      - run: flutter build web --release --dart-define=DEMO_MODE=true
+  database:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker run --detach --name impactlab-postgres-test --network none --env POSTGRES_HOST_AUTH_METHOD=trust postgres:17-alpine
+      - run: until docker exec impactlab-postgres-test pg_isready -U postgres; do sleep 1; done
+      - run: python3 tool/test_backend.py
+      - if: always()
+        run: docker stop impactlab-postgres-test

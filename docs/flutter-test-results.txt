@@ -1,0 +1,27 @@
+00:00 +0: loading C:/Users/PC-01/Documents/impactlab/test/domain_test.dart
+00:00 +0: C:/Users/PC-01/Documents/impactlab/test/domain_test.dart: Integrated publication, delivery, approval, reservation and pickup
+00:00 +1: C:/Users/PC-01/Documents/impactlab/test/domain_test.dart: Repeated approval is idempotent
+00:00 +2: C:/Users/PC-01/Documents/impactlab/test/screenshots_test.dart: Rendered preview Size(390.0, 844.0)
+00:00 +3: C:/Users/PC-01/Documents/impactlab/test/screenshots_test.dart: Rendered preview Size(390.0, 844.0)
+00:00 +4: C:/Users/PC-01/Documents/impactlab/test/screenshots_test.dart: Rendered preview Size(390.0, 844.0)
+00:00 +5: C:/Users/PC-01/Documents/impactlab/test/screenshots_test.dart: Rendered preview Size(390.0, 844.0)
+00:00 +6: C:/Users/PC-01/Documents/impactlab/test/screenshots_test.dart: Rendered preview Size(390.0, 844.0)
+00:00 +7: C:/Users/PC-01/Documents/impactlab/test/screenshots_test.dart: Rendered preview Size(390.0, 844.0)
+00:00 +8: C:/Users/PC-01/Documents/impactlab/test/screenshots_test.dart: Rendered preview Size(390.0, 844.0)
+00:00 +9: C:/Users/PC-01/Documents/impactlab/test/screenshots_test.dart: Rendered preview Size(390.0, 844.0)
+00:00 +10: C:/Users/PC-01/Documents/impactlab/test/screenshots_test.dart: Rendered preview Size(390.0, 844.0)
+00:00 +11: C:/Users/PC-01/Documents/impactlab/test/screenshots_test.dart: Rendered preview Size(390.0, 844.0)
+00:00 +12: C:/Users/PC-01/Documents/impactlab/test/screenshots_test.dart: Rendered preview Size(390.0, 844.0)
+00:00 +13: C:/Users/PC-01/Documents/impactlab/test/screenshots_test.dart: Rendered preview Size(390.0, 844.0)
+00:00 +14: C:/Users/PC-01/Documents/impactlab/test/screenshots_test.dart: Rendered preview Size(390.0, 844.0)
+00:00 +15: C:/Users/PC-01/Documents/impactlab/test/screenshots_test.dart: Rendered preview Size(390.0, 844.0)
+00:00 +16: C:/Users/PC-01/Documents/impactlab/test/screenshots_test.dart: Rendered preview Size(390.0, 844.0)
+00:00 +17: C:/Users/PC-01/Documents/impactlab/test/screenshots_test.dart: Rendered preview Size(390.0, 844.0)
+00:00 +18: C:/Users/PC-01/Documents/impactlab/test/screenshots_test.dart: Rendered preview Size(390.0, 844.0)
+00:00 +19: C:/Users/PC-01/Documents/impactlab/test/screenshots_test.dart: Rendered preview Size(390.0, 844.0)
+00:04 +20: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: All profiles and navigation fit Size(360.0, 800.0)
+00:05 +21: C:/Users/PC-01/Documents/impactlab/test/screenshots_test.dart: Rendered preview Size(1440.0, 1000.0)
+00:07 +22: C:/Users/PC-01/Documents/impactlab/test/screenshots_test.dart: Rendered preview Size(1440.0, 1000.0)
+00:07 +23: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: All profiles and navigation fit Size(1440.0, 1000.0)
+00:08 +24: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: Student sends delivery through UI
+00:09 +25: All tests passed!

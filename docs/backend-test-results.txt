@@ -1,0 +1,31 @@
+PostgreSQL 17 integration suite
+Database: portal_test_1789744340
+PASS student cannot publish
+PASS teacher restricted by classroom
+PASS teacher restricted by subject
+PASS other school cannot access publication
+PASS student cannot self-validate
+PASS guardian cannot validate academic work
+PASS unassigned teacher cannot validate
+PASS 8 concurrent approvals grant exactly once
+PASS mission participation limit
+PASS insufficient balance has no side effects
+PASS tenant, guardian, personal and delivery privacy
+PASS direct wallet overwrite denied
+PASS direct academic table read denied to delivery
+PASS private function invocation denied
+PASS 8 concurrent reservations contend for last stock atomically
+PASS idempotent request retry
+PASS duplicate cancellation rejected
+PASS cancelled pickup code rejected
+PASS pickup code cannot be reused
+PASS ledger immutable even to administrator
+PASS compensating correction cannot repeat
+PASS family mission grants only after linked guardian confirmation
+PASS batch rollback on unauthorized validation
+PASS guardian cannot approve unlinked student
+PASS student cannot provision privileged accounts
+PASS service provision creates zero-balance student in coordinator school
+PASS 8 concurrent requests cannot spend the same balance twice
+PASS subject rename preserves assignments and published work
+28 checks passed.
