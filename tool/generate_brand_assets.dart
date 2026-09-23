@@ -39,7 +39,9 @@ void main() {
       final bytes = await image.toByteData(format: ui.ImageByteFormat.png);
       final file = File(path);
       await file.parent.create(recursive: true);
-      await file.writeAsBytes(bytes!.buffer.asUint8List());
+      final temporary = File('$path.tmp');
+      await temporary.writeAsBytes(bytes!.buffer.asUint8List());
+      await temporary.rename(path);
       image.dispose();
       picture.dispose();
     }
@@ -74,6 +76,13 @@ void main() {
       );
     }
     await render('web/favicon.png', 48);
+    for (final scale in [1, 2, 3]) {
+      final suffix = scale == 1 ? '' : '@${scale}x';
+      await render(
+        'ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage$suffix.png',
+        192 * scale,
+      );
+    }
     for (final size in [192, 512]) {
       await render('web/icons/Icon-$size.png', size);
       await render('web/icons/Icon-maskable-$size.png', size, inset: .20);

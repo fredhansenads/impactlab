@@ -19,7 +19,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: docker run --detach --name impactlab-postgres-test --network none --env POSTGRES_HOST_AUTH_METHOD=trust postgres:17-alpine
-      - run: until docker exec impactlab-postgres-test pg_isready -U postgres; do sleep 1; done
+      # The initialization server accepts Unix sockets before the final restart.
+      # TCP loopback is available only when the actual server is ready.
+      - name: Wait for the final PostgreSQL server
+        timeout-minutes: 2
+        run: until docker exec impactlab-postgres-test pg_isready -h 127.0.0.1 -U postgres; do sleep 1; done
       - run: python3 tool/test_backend.py
       - if: always()
         run: docker stop impactlab-postgres-test

@@ -1,0 +1,6 @@
+# Copie para key.properties (ignorado pelo Git) e preencha localmente.
+# Caminho absoluto ou relativo à pasta android. No Windows, use barras /.
+storeFile=
+storePassword=
+keyAlias=
+keyPassword=

@@ -1,0 +1,76 @@
+name: Mobile demo
+on:
+  workflow_dispatch:
+    inputs:
+      ios_simulator:
+        description: 'Também compilar e testar no simulador iOS (não instala no iPhone)'
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - 'android/**'
+      - 'lib/**'
+      - 'assets/**'
+      - 'pubspec.*'
+      - '.github/workflows/mobile.yml'
+permissions:
+  contents: read
+concurrency:
+  group: mobile-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  android-apk:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.47.4'
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - name: Build installable demonstration APK
+        run: flutter build apk --debug --dart-define=DEMO_MODE=true
+      - name: Record checksum
+        run: |
+          cd build/app/outputs/flutter-apk
+          sha256sum app-debug.apk > app-debug.apk.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ImpactLab-Android-demo
+          path: |
+            build/app/outputs/flutter-apk/app-debug.apk
+            build/app/outputs/flutter-apk/app-debug.apk.sha256
+          retention-days: 7
+          if-no-files-found: error
+  ios-simulator:
+    if: github.event_name == 'workflow_dispatch' && inputs.ios_simulator
+    runs-on: macos-15
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.47.4'
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - name: Build iOS simulator app without distribution credentials
+        run: flutter build ios --simulator --debug --dart-define=DEMO_MODE=true
+      - name: Start an available iPhone simulator
+        run: |
+          DEVICE_ID=$(xcrun simctl list devices available --json | python3 -c 'import json,sys; d=json.load(sys.stdin); print(next(v["udid"] for k,vs in d["devices"].items() if "iOS" in k for v in vs if v["isAvailable"] and v["name"].startswith("iPhone")))')
+          echo "IOS_DEVICE_ID=$DEVICE_ID" >> "$GITHUB_ENV"
+          xcrun simctl boot "$DEVICE_ID"
+          xcrun simctl bootstatus "$DEVICE_ID" -b
+      - name: Exercise the native demo and notification plugin
+        run: flutter test integration_test/mobile_smoke_test.dart -d "$IOS_DEVICE_ID" --dart-define=DEMO_MODE=true
+      - name: Stop simulator
+        if: always() && env.IOS_DEVICE_ID != ''
+        run: xcrun simctl shutdown "$IOS_DEVICE_ID"

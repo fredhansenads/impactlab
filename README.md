@@ -114,7 +114,7 @@ Resumo dos 25 testes Flutter e 28 verificações PostgreSQL em `docs/VERIFICATIO
 ## Limites e próximos passos para uma escola real
 
 - Validado localmente: análise estática, testes Flutter, renderização em larguras de 360, 390, 768 e 1440 pixels, compilação Web e testes transacionais no PostgreSQL 17.
-- **Android/iOS não foram testados em aparelho ou simulador.** Android está sem cmdline-tools e validação de licenças; iOS exige Mac/Xcode. Assinaturas de distribuição e publicação não foram configuradas. O projeto Android mantém assinatura de depuração apenas para desenvolvimento.
+- **Android/iOS não foram testados em aparelho ou simulador.** Android está sem cmdline-tools e validação de licenças; iOS exige Mac/Xcode. Assinaturas de distribuição e publicação não foram configuradas. O APK debug usa assinatura de teste; builds de release exigem chave configurada localmente, sem fallback para debug.
 - Login, convites, recuperação, SMTP e notificações nativas precisam de teste ponta a ponta com as credenciais e os dispositivos da escola. A Edge Function foi fornecida, mas não executada contra Auth real.
 - Lembretes locais: opt-in contextual, próximos 40 prazos, 24 horas antes, entrega aproximada no Android. Reative na nova sessão para reprogramar com os dados atuais; alterações feitas enquanto o app permanece fechado não atualizam a agenda local. Desativar cancela os lembretes pendentes.
 - Push de validação/resgate com o aplicativo fechado requer FCM/APNs e um consumidor autorizado das notificações do banco; não está ativo. Os avisos internos funcionam ao atualizar os dados.
@@ -130,3 +130,7 @@ Depois de `flutter build web`, execute `python tool/serve_preview.py`. O script 
 O aplicativo usa azul-marinho (`#04122D`), azul (`#0756B5`) e ciano (`#27D8F4`), inspirados no logo. Fundos claros (`#F4F7FC`) preservam a leitura; o dourado identifica as Star Coins. A identidade está aplicada ao acesso, cabeçalho, navegação, agenda, missões, carteira e recompensas.
 
 Logo original fornecido pelo responsável pelo projeto em 23/09/2026: `assets/branding/impactlab-logo.jpeg`. A imagem é preservada, sem redesenho; os ícones de Android, iOS e Web são renderizados proporcionalmente, com margem para evitar cortes. Para regenerar esses arquivos: `flutter test tool/generate_brand_assets.dart`. Os nomes técnicos do pacote Dart e dos identificadores nativos permanecem compatíveis com a configuração existente.
+
+## Preparação móvel
+
+Consulte [Testes móveis gratuitos](docs/MOBILE.md) para gerar e instalar o APK Android, usar o Safari no iPhone e preparar futuramente a instalação nativa com um Mac. O workflow Mobile demo gera o APK; o teste em simulador iOS é opcional e manual.
