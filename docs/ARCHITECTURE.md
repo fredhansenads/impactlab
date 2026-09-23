@@ -26,7 +26,7 @@ Movimentações, contribuições, conquistas e auditoria não podem ser alterada
 
 ## Interface e acessibilidade
 
-Material 3, texto em pt-BR, superfícies claras, verde escuro e estrela amarela para a moeda. Layout usa coluna em telas pequenas e navegação lateral em telas largas. Estados possuem rótulos, não apenas cores. Botões têm rótulo/tooltip, formulários validam entradas e ações financeiras pedem confirmação. Testes verificam ausência de overflow em quatro larguras; validação com TalkBack/VoiceOver e fontes ampliadas deve ocorrer em dispositivos antes de uso real.
+Material 3, texto em pt-BR, superfícies claras, azul-marinho e azul da marca ImpactLab, com estrela amarela para a moeda. Layout usa coluna em telas pequenas e navegação lateral em telas largas. Estados possuem rótulos, não apenas cores. Botões têm rótulo/tooltip, formulários validam entradas e ações financeiras pedem confirmação. Testes verificam ausência de overflow em quatro larguras; validação com TalkBack/VoiceOver e fontes ampliadas deve ocorrer em dispositivos antes de uso real.
 
 A demonstração reinicia com dados fictícios relativos à data local. O backend normaliza datas de comandos em UTC; a apresentação converte para horário local. Contas de responsáveis nunca recebem lembretes privados. Textos de notificações não identificam aluno, atividade ou recompensa.
 
@@ -34,6 +34,6 @@ A demonstração reinicia com dados fictícios relativos à data local. O backen
 
 Supabase hospedado, SMTP e Edge Function precisam ser configurados pela escola. Serviço de push FCM/APNs não está conectado; há avisos internos e agendamento local opt-in. Não há chamada financeira offline. Notificações são auxiliares: falha ao agendar não desfaz uma transação confirmada no servidor.
 
-O app não apresenta um nome comercial definitivo. O pacote de desenvolvimento é `br.edu.portal.portal_escolar`; definir identificadores, marca e assinatura antes de distribuir. Os ícones de launcher gerados pelo Flutter são provisórios.
+A marca exibida é ImpactLab, com o logo original fornecido pelo responsável pelo projeto. O pacote técnico continua `br.edu.portal.portal_escolar`; definir a assinatura de distribuição antes de publicar. Os ícones de instalação usam o logo com escala proporcional.
 
 Conversão de Star Coins em pontos acadêmicos foi **deliberadamente excluída**. Qualquer proposta futura exige decisão explícita da escola sobre disciplinas elegíveis, limites, critérios, equidade, registro acadêmico e autorização do professor. Recompensa, participação e nota permanecem separadas. Não existem ranking público, streaks punitivos, compra de moedas ou dependência da alimentação regular em moedas.

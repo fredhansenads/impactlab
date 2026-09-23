@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../core/controller.dart';
 import '../../core/widgets.dart';
+import '../../core/brand.dart';
 
 class WalletView extends StatelessWidget {
   const WalletView(this.c, {this.studentId, super.key});
@@ -21,14 +22,15 @@ class WalletView extends StatelessWidget {
           subtitle: 'Sua participação, reconhecida pela escola.',
         ),
         Surface(
-          color: ink,
+          color: brandNavy,
+          gradient: brandGradient,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
                 'STAR COIN  /  SUA CARTEIRA',
                 style: TextStyle(
-                  color: Color(0xFFCCE2D8),
+                  color: Color(0xFFB7DDF8),
                   letterSpacing: 1.8,
                   fontSize: 12,
                 ),
@@ -67,7 +69,7 @@ class WalletView extends StatelessWidget {
         const SizedBox(height: 16),
         const Text(
           'Moeda interna da escola, sem valor em dinheiro. Não pode ser comprada ou transferida e não expira nesta versão. Gastar moedas preserva suas conquistas.',
-          style: TextStyle(height: 1.6, color: Color(0xFF526B65)),
+          style: TextStyle(height: 1.6, color: Color(0xFF52637D)),
         ),
         const SectionHeading(
           'Seu caminho até aqui',
@@ -88,7 +90,7 @@ class WalletView extends StatelessWidget {
                     l['kind'] == 'gain'
                         ? Icons.stars_outlined
                         : Icons.receipt_long_outlined,
-                    color: teal,
+                    color: brandPrimary,
                   ),
                   const SizedBox(width: 16),
                   Expanded(
@@ -116,7 +118,7 @@ class WalletView extends StatelessWidget {
                     '${l['amount'] > 0 ? '+' : ''}${l['amount']} ★',
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: teal,
+                      color: brandPrimary,
                     ),
                   ),
                 ],

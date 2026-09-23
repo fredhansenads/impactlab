@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:portal_escolar/core/brand.dart';
+import 'package:portal_escolar/features/auth/login_view.dart';
 import 'package:portal_escolar/main.dart';
 import 'package:portal_escolar/core/controller.dart';
 import 'package:portal_escolar/core/models.dart';
@@ -41,6 +44,13 @@ void main() {
         RepaintBoundary(key: boundary, child: SchoolApp(c)),
       );
       await tester.pumpAndSettle();
+      await tester.runAsync(
+        () => precacheImage(
+          const AssetImage(brandLogoAsset),
+          tester.element(find.byType(Shell)),
+        ),
+      );
+      await tester.pumpAndSettle();
       Future<void> capture(String name) async {
         expect(tester.takeException(), isNull);
         if (!const bool.fromEnvironment('CAPTURE_SCREENSHOTS')) return;
@@ -50,9 +60,11 @@ void main() {
                   as RenderRepaintBoundary;
           final image = await render.toImage(pixelRatio: 1);
           final bytes = await image.toByteData(format: ui.ImageByteFormat.png);
-          File(
-            'docs/screenshots/$name-${size.width.toInt()}.png',
-          ).writeAsBytesSync(bytes!.buffer.asUint8List());
+          final path = 'docs/screenshots/$name-${size.width.toInt()}.png';
+          // Replace atomically so Windows previewers can keep the old file open.
+          File('$path.tmp')
+            ..writeAsBytesSync(bytes!.buffer.asUint8List())
+            ..renameSync(path);
           image.dispose();
         });
       }
@@ -66,6 +78,22 @@ void main() {
       await c.switchRole(AccessRole.teacher);
       await tester.pumpAndSettle();
       await capture('professor');
+      final theme = Theme.of(tester.element(find.byType(Scaffold).first));
+      await tester.pumpWidget(
+        RepaintBoundary(
+          key: boundary,
+          child: MaterialApp(
+            theme: theme,
+            debugShowCheckedModeBanner: false,
+            locale: const Locale('pt', 'BR'),
+            supportedLocales: const [Locale('pt', 'BR')],
+            localizationsDelegates: GlobalMaterialLocalizations.delegates,
+            home: LoginView(c),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+      await capture('acesso');
     });
   }
 }

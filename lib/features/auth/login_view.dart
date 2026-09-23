@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../core/controller.dart';
 import '../../core/widgets.dart';
+import '../../core/brand.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView(this.c, {super.key});
@@ -32,9 +33,9 @@ class _LoginViewState extends State<LoginView> {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const Icon(Icons.auto_awesome, color: teal, size: 42),
+                const BrandLogo(height: 220),
                 const SectionHeading(
-                  'Bem-vindo ao Portal Escolar',
+                  'Bem-vindo ao ImpactLab',
                   subtitle: 'Entre com a conta fornecida pela escola.',
                 ),
                 TextField(

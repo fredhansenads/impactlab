@@ -139,7 +139,9 @@ class ActivityTile extends StatelessWidget {
               height: 46,
               decoration: BoxDecoration(
                 color:
-                    (a['kind'] == 'academic' ? teal : const Color(0xFFA05D31))
+                    (a['kind'] == 'academic'
+                            ? brandPrimary
+                            : const Color(0xFF00788F))
                         .withValues(alpha: .09),
                 borderRadius: BorderRadius.circular(14),
               ),
@@ -149,7 +151,7 @@ class ActivityTile extends StatelessWidget {
                     : a['kind'] == 'collective'
                     ? Icons.eco_outlined
                     : Icons.volunteer_activism_outlined,
-                color: teal,
+                color: brandPrimary,
               ),
             ),
             const SizedBox(width: 16),
@@ -186,7 +188,7 @@ class ActivityTile extends StatelessWidget {
                     'Até ${dateLabel(a['due_at'])}',
                     style: const TextStyle(
                       fontSize: 13,
-                      color: Color(0xFF526B65),
+                      color: Color(0xFF52637D),
                     ),
                   ),
                   const SizedBox(height: 8),
@@ -200,7 +202,7 @@ class ActivityTile extends StatelessWidget {
                 ],
               ),
             ),
-            const Icon(Icons.arrow_forward_ios, size: 15, color: teal),
+            const Icon(Icons.arrow_forward_ios, size: 15, color: brandPrimary),
           ],
         ),
       ),

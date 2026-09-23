@@ -77,7 +77,7 @@ class LocalReminders {
         id: id++,
         scheduledDate: tz.TZDateTime.from(when, tz.UTC),
         title: 'Um compromisso se aproxima',
-        body: 'Confira sua agenda no Portal Escolar.',
+        body: 'Confira sua agenda no ImpactLab.',
         notificationDetails: const NotificationDetails(
           android: AndroidNotificationDetails(
             'deadlines',

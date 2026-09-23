@@ -3,9 +3,9 @@ import 'package:intl/intl.dart';
 import 'controller.dart';
 import 'models.dart';
 
-const ink = Color(0xFF173D3A);
-const teal = Color(0xFF21675C);
-const canvas = Color(0xFFF6F7F2);
+const ink = Color(0xFF081936);
+const brandPrimary = Color(0xFF0756B5);
+const canvas = Color(0xFFF4F7FC);
 const gold = Color(0xFFF3CA63);
 String dateLabel(String value) => DateFormat(
   'dd MMM • HH:mm',
@@ -39,7 +39,7 @@ class SectionHeading extends StatelessWidget {
                 const SizedBox(height: 5),
                 Text(
                   subtitle!,
-                  style: const TextStyle(color: Color(0xFF516A66), height: 1.5),
+                  style: const TextStyle(color: Color(0xFF52637D), height: 1.5),
                 ),
               ],
             ],
@@ -52,14 +52,28 @@ class SectionHeading extends StatelessWidget {
 }
 
 class Surface extends StatelessWidget {
-  const Surface({required this.child, this.color = Colors.white, super.key});
+  const Surface({
+    required this.child,
+    this.color = Colors.white,
+    this.gradient,
+    super.key,
+  });
   final Widget child;
   final Color color;
+  final Gradient? gradient;
   @override
   Widget build(BuildContext context) => Container(
     padding: const EdgeInsets.all(22),
     decoration: BoxDecoration(
       color: color,
+      gradient: gradient,
+      boxShadow: [
+        BoxShadow(
+          color: ink.withValues(alpha: .035),
+          blurRadius: 22,
+          offset: const Offset(0, 6),
+        ),
+      ],
       borderRadius: BorderRadius.circular(22),
       border: Border.all(color: ink.withValues(alpha: .07)),
     ),
@@ -68,7 +82,7 @@ class Surface extends StatelessWidget {
 }
 
 class Tag extends StatelessWidget {
-  const Tag(this.text, {this.color = teal, super.key});
+  const Tag(this.text, {this.color = brandPrimary, super.key});
   final String text;
   final Color color;
   @override
@@ -92,7 +106,7 @@ class EmptyState extends StatelessWidget {
   Widget build(BuildContext context) => Surface(
     child: Row(
       children: [
-        const Icon(Icons.spa_outlined, color: teal),
+        const Icon(Icons.spa_outlined, color: brandPrimary),
         const SizedBox(width: 16),
         Expanded(child: Text(text, style: const TextStyle(height: 1.5))),
       ],
@@ -343,7 +357,7 @@ class StarText extends StatelessWidget {
                 child: Icon(
                   Icons.star_rounded,
                   size: (style?.fontSize ?? 14) * .95,
-                  color: style?.color ?? teal,
+                  color: style?.color ?? brandPrimary,
                 ),
               ),
             TextSpan(text: parts[i]),

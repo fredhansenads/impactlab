@@ -1,5 +1,5 @@
 name: portal_escolar
-description: Agenda escolar, participação e recompensas com Star Coins.
+description: ImpactLab — agenda escolar, participação e recompensas com Star Coins.
 publish_to: none
 version: 0.1.0+1
 environment:
@@ -20,3 +20,5 @@ dev_dependencies:
   flutter_lints: ^5.0.0
 flutter:
   uses-material-design: true
+  assets:
+    - assets/branding/impactlab-logo.jpeg

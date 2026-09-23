@@ -1,6 +1,8 @@
-# Portal Escolar — primeira versão funcional
+# ImpactLab — primeira versão funcional
 
-Aplicativo Flutter/Dart para Android e iOS, com prévia Web. **Portal Escolar é um nome provisório; Star Coin é o nome da moeda.** Interface em português do Brasil, dados fictícios na demonstração e nenhuma publicação externa realizada.
+Aplicativo Flutter/Dart para Android e iOS, com prévia Web. **ImpactLab é o nome do aplicativo; Star Coin é o nome da moeda.** Interface em português do Brasil, dados fictícios na demonstração e nenhuma publicação externa realizada.
+
+<p align="center"><img src="assets/branding/impactlab-logo.jpeg" alt="Logo ImpactLab" width="240" /></p>
 
 ## Executar a demonstração
 
@@ -16,7 +18,7 @@ flutter run -d <identificador-do-dispositivo> --dart-define=DEMO_MODE=true
 
 Neste computador, um SDK local foi obtido em `.tools/flutter` (ignorado pelo Git). Se Flutter não estiver no PATH, substitua `flutter` por `.\.tools\flutter\bin\flutter.bat`.
 
-A faixa amarela permite alternar os cinco perfis **apenas na demonstração**. As alterações ficam em memória durante a sessão e são descartadas ao reiniciar. Não são contas reais, não há envio de e-mails e o saldo inicial fictício de Lia é 40 Star Coins.
+A faixa azul de demonstração permite alternar os cinco perfis **apenas na demonstração**. As alterações ficam em memória durante a sessão e são descartadas ao reiniciar. Não são contas reais, não há envio de e-mails e o saldo inicial fictício de Lia é 40 Star Coins.
 
 ### Roteiro integrado
 
@@ -122,3 +124,9 @@ Resumo dos 25 testes Flutter e 28 verificações PostgreSQL em `docs/VERIFICATIO
 ## Prévia local da compilação Web
 
 Depois de `flutter build web`, execute `python tool/serve_preview.py`. O script escolhe uma porta disponível e mostra o endereço local. Ele serve apenas a pasta `build/web` em `127.0.0.1`, sem publicação externa. Use Ctrl+C para encerrar.
+
+## Identidade visual
+
+O aplicativo usa azul-marinho (`#04122D`), azul (`#0756B5`) e ciano (`#27D8F4`), inspirados no logo. Fundos claros (`#F4F7FC`) preservam a leitura; o dourado identifica as Star Coins. A identidade está aplicada ao acesso, cabeçalho, navegação, agenda, missões, carteira e recompensas.
+
+Logo original fornecido pelo responsável pelo projeto em 23/09/2026: `assets/branding/impactlab-logo.jpeg`. A imagem é preservada, sem redesenho; os ícones de Android, iOS e Web são renderizados proporcionalmente, com margem para evitar cortes. Para regenerar esses arquivos: `flutter test tool/generate_brand_assets.dart`. Os nomes técnicos do pacote Dart e dos identificadores nativos permanecem compatíveis com a configuração existente.

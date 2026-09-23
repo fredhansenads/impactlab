@@ -182,7 +182,7 @@ class _AgendaViewState extends State<AgendaView> {
                           color:
                               d.day == DateTime.now().day &&
                                   d.month == DateTime.now().month
-                              ? teal
+                              ? brandPrimary
                               : Colors.white,
                           borderRadius: BorderRadius.circular(14),
                         ),
@@ -233,7 +233,10 @@ class _AgendaViewState extends State<AgendaView> {
                 ? Surface(
                     child: ListTile(
                       contentPadding: EdgeInsets.zero,
-                      leading: const Icon(Icons.lock_outline, color: teal),
+                      leading: const Icon(
+                        Icons.lock_outline,
+                        color: brandPrimary,
+                      ),
                       title: Text(a['title']),
                       subtitle: Text(
                         '${dateLabel(a['due_at'])}\nPessoal • privado • sem Star Coins',

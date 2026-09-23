@@ -1,0 +1,39 @@
+Resolving dependencies...
+Downloading packages...
+  dbus 0.7.15 (0.8.0 available)
+  flutter_lints 5.0.0 (6.0.0 available)
+  lints 5.1.1 (6.1.0 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  meta 1.18.3 (1.19.0 available)
+  test_api 0.7.12 (0.7.14 available)
+  vector_math 2.4.0 (2.4.3 available)
+Got dependencies!
+7 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading C:/Users/PC-01/Documents/impactlab/test/domain_test.dart
+00:00 +0: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: All profiles and navigation fit Size(360.0, 800.0)
+00:00 +1: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: All profiles and navigation fit Size(360.0, 800.0)
+00:01 +2: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: All profiles and navigation fit Size(360.0, 800.0)
+00:01 +3: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: All profiles and navigation fit Size(360.0, 800.0)
+00:01 +4: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: All profiles and navigation fit Size(360.0, 800.0)
+00:01 +5: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: All profiles and navigation fit Size(360.0, 800.0)
+00:01 +6: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: All profiles and navigation fit Size(360.0, 800.0)
+00:01 +7: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: All profiles and navigation fit Size(360.0, 800.0)
+00:01 +8: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: All profiles and navigation fit Size(360.0, 800.0)
+00:02 +9: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: All profiles and navigation fit Size(360.0, 800.0)
+00:02 +10: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: All profiles and navigation fit Size(360.0, 800.0)
+00:02 +11: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: All profiles and navigation fit Size(360.0, 800.0)
+00:02 +12: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: All profiles and navigation fit Size(360.0, 800.0)
+00:02 +13: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: All profiles and navigation fit Size(360.0, 800.0)
+00:02 +14: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: All profiles and navigation fit Size(360.0, 800.0)
+00:02 +15: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: All profiles and navigation fit Size(360.0, 800.0)
+00:02 +16: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: All profiles and navigation fit Size(360.0, 800.0)
+00:02 +17: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: All profiles and navigation fit Size(360.0, 800.0)
+00:02 +18: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: All profiles and navigation fit Size(360.0, 800.0)
+00:03 +19: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: All profiles and navigation fit Size(360.0, 800.0)
+00:21 +20: C:/Users/PC-01/Documents/impactlab/test/screenshots_test.dart: Rendered preview Size(390.0, 844.0)
+00:26 +21: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: All profiles and navigation fit Size(768.0, 1024.0)
+00:29 +22: C:/Users/PC-01/Documents/impactlab/test/screenshots_test.dart: Rendered preview Size(1440.0, 1000.0)
+00:39 +23: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: All profiles and navigation fit Size(1440.0, 1000.0)
+00:40 +24: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: Student sends delivery through UI
+00:43 +25: All tests passed!

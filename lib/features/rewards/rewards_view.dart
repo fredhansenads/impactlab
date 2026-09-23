@@ -42,10 +42,10 @@ class RewardsView extends StatelessWidget {
                             width: double.infinity,
                             decoration: BoxDecoration(
                               color: r['icon'] == 'snack'
-                                  ? const Color(0xFFFFEFDD)
+                                  ? const Color(0xFFE0F5FA)
                                   : r['icon'] == 'gift'
-                                  ? const Color(0xFFE8EAF6)
-                                  : const Color(0xFFECF3DF),
+                                  ? const Color(0xFFE8EDFF)
+                                  : const Color(0xFFE4F1FC),
                               borderRadius: BorderRadius.circular(16),
                             ),
                             child: Icon(
@@ -165,7 +165,7 @@ class RewardsView extends StatelessWidget {
                       fontSize: 23,
                       letterSpacing: 2,
                       fontWeight: FontWeight.bold,
-                      color: teal,
+                      color: brandPrimary,
                     ),
                   ),
                   if (c.account!.role == AccessRole.student)

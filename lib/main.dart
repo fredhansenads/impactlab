@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'core/controller.dart';
+import 'core/brand.dart';
 import 'core/models.dart';
 import 'core/widgets.dart';
 import 'data/demo_repository.dart';
@@ -69,7 +70,7 @@ class SchoolApp extends StatelessWidget {
   final SchoolController c;
   @override
   Widget build(BuildContext context) => MaterialApp(
-    title: 'Portal Escolar',
+    title: appName,
     debugShowCheckedModeBanner: false,
     locale: const Locale('pt', 'BR'),
     supportedLocales: const [Locale('pt', 'BR')],
@@ -78,9 +79,25 @@ class SchoolApp extends StatelessWidget {
       useMaterial3: true,
       scaffoldBackgroundColor: canvas,
       colorScheme: ColorScheme.fromSeed(
-        seedColor: teal,
-        primary: teal,
+        seedColor: brandPrimary,
+        primary: brandPrimary,
+        secondary: const Color(0xFF00788F),
+        tertiary: const Color(0xFF805900),
         surface: Colors.white,
+      ),
+      navigationBarTheme: const NavigationBarThemeData(
+        backgroundColor: Colors.white,
+        indicatorColor: Color(0xFFDDEBFF),
+        surfaceTintColor: Colors.transparent,
+        labelTextStyle: WidgetStatePropertyAll(
+          TextStyle(fontSize: 11, height: 1.2),
+        ),
+      ),
+      appBarTheme: const AppBarTheme(foregroundColor: ink),
+      chipTheme: ChipThemeData(
+        selectedColor: const Color(0xFFDDEBFF),
+        backgroundColor: Colors.white,
+        side: BorderSide(color: brandPrimary.withValues(alpha: .18)),
       ),
       fontFamily: 'Roboto',
       textTheme: const TextTheme(
@@ -174,27 +191,17 @@ class _ShellState extends State<Shell> {
     final wide = MediaQuery.sizeOf(context).width >= 1000;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: canvas,
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.transparent,
         toolbarHeight: 76,
         title: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Container(
-              padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                color: teal,
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: const Icon(
-                Icons.auto_awesome_rounded,
-                color: gold,
-                size: 24,
-              ),
-            ),
+            const BrandLogo(height: 54, excludeFromSemantics: true),
             const SizedBox(width: 12),
             const Flexible(
               child: Text(
-                'Portal Escolar',
+                appName,
                 style: TextStyle(
                   fontSize: 19,
                   fontWeight: FontWeight.w700,
@@ -319,7 +326,7 @@ class _ShellState extends State<Shell> {
             onPressed: () => profile(context, c),
             icon: CircleAvatar(
               radius: 17,
-              backgroundColor: const Color(0xFFE4EAD9),
+              backgroundColor: const Color(0xFFDFECFC),
               child: Text(
                 c.account!.name[0],
                 style: const TextStyle(color: ink, fontWeight: FontWeight.bold),
@@ -348,7 +355,7 @@ class _ShellState extends State<Shell> {
             if (c.repository.isDemo)
               Container(
                 width: double.infinity,
-                color: const Color(0xFFF7EDCD),
+                color: const Color(0xFFE1ECFF),
                 padding: const EdgeInsets.symmetric(
                   horizontal: 20,
                   vertical: 5,
@@ -362,7 +369,7 @@ class _ShellState extends State<Shell> {
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w600,
-                        color: Color(0xFF6B5114),
+                        color: Color(0xFF173D78),
                       ),
                     ),
                     DropdownButtonHideUnderline(
@@ -414,7 +421,7 @@ class _ShellState extends State<Shell> {
                       width: 218,
                       decoration: const BoxDecoration(
                         border: Border(
-                          right: BorderSide(color: Color(0xFFE9EDE5)),
+                          right: BorderSide(color: Color(0xFFE1E8F2)),
                         ),
                       ),
                       child: Column(
@@ -427,7 +434,7 @@ class _ShellState extends State<Shell> {
                               style: TextStyle(
                                 fontSize: 11,
                                 letterSpacing: 1.6,
-                                color: Color(0xFF657971),
+                                color: Color(0xFF586B85),
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -442,7 +449,7 @@ class _ShellState extends State<Shell> {
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(12),
                                 ),
-                                selectedTileColor: const Color(0xFFEDF3EC),
+                                selectedTileColor: const Color(0xFFE6F0FD),
                                 selected: current == i,
                                 leading: Icon(icons[i], size: 21),
                                 title: Text(
@@ -458,7 +465,7 @@ class _ShellState extends State<Shell> {
                             child: Text(
                               'Aprender é um caminho.\nVamos juntos.',
                               style: TextStyle(
-                                color: teal,
+                                color: brandPrimary,
                                 height: 1.6,
                                 fontSize: 13,
                               ),
@@ -524,40 +531,7 @@ class HomeView extends StatelessWidget {
         ),
         LayoutBuilder(
           builder: (context, box) {
-            final hero = Surface(
-              color: ink,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const TagLight('UM PASSO DE CADA VEZ'),
-                  const SizedBox(height: 20),
-                  const Text(
-                    'Seu aprendizado\nilumina o caminho.',
-                    style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white,
-                      height: 1.2,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  const Text(
-                    'Organize seus planos, participe de missões\ne celebre cada nova conquista.',
-                    style: TextStyle(color: Color(0xFFD3E4DA), height: 1.7),
-                  ),
-                  const SizedBox(height: 24),
-                  FilledButton.icon(
-                    style: FilledButton.styleFrom(
-                      backgroundColor: gold,
-                      foregroundColor: ink,
-                    ),
-                    onPressed: () => onNavigate(2),
-                    label: const Text('Explorar missões'),
-                    icon: const Icon(Icons.arrow_forward, size: 18),
-                  ),
-                ],
-              ),
-            );
+            final hero = BrandHero(onExplore: () => onNavigate(2));
             final wallet = Surface(
               color: const Color(0xFFF6EDD0),
               child: Column(
@@ -639,7 +613,7 @@ class HomeView extends StatelessWidget {
         const SectionHeading('Juntos vamos mais longe'),
         for (final g in c.snapshot.rows('goals'))
           Surface(
-            color: const Color(0xFFEAF0E1),
+            color: const Color(0xFFE4F1FC),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -686,7 +660,7 @@ class TagLight extends StatelessWidget {
   Widget build(BuildContext context) => Text(
     text,
     style: const TextStyle(
-      color: Color(0xFFBDD5C4),
+      color: Color(0xFFB8DDFB),
       letterSpacing: 1.8,
       fontSize: 11,
       fontWeight: FontWeight.bold,
@@ -727,7 +701,11 @@ Future<void> profile(
               ),
 
             const SectionHeading('Conquistas que ficam'),
-            const Icon(Icons.workspace_premium_outlined, color: teal, size: 48),
+            const Icon(
+              Icons.workspace_premium_outlined,
+              color: brandPrimary,
+              size: 48,
+            ),
             const SizedBox(height: 12),
             const Text(
               'Parceiro da Turma\nComplete cinco missões de colaboração que contribuam para a turma.',
@@ -740,7 +718,7 @@ Future<void> profile(
               Tag('★ ${b['name']}'),
             const SizedBox(height: 16),
             const Text(
-              'Sem ranking público, sem sequências perdidas por faltas. Star Coins não alteram notas. O nome Portal Escolar é provisório.',
+              'Sem ranking público, sem sequências perdidas por faltas. Star Coins não alteram notas.',
             ),
           ],
         ),

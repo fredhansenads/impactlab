@@ -21,7 +21,7 @@ void main() {
       await c.refresh();
       await tester.pumpWidget(SchoolApp(c));
       await tester.pumpAndSettle();
-      expect(find.text('Portal Escolar'), findsOneWidget);
+      expect(find.text('ImpactLab'), findsOneWidget);
       expect(tester.takeException(), isNull);
       for (final label in [
         'Agenda',
