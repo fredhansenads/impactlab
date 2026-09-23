@@ -109,7 +109,7 @@ docker stop impactlab-postgres-test
 
 O contêiner não expõe portas nem tem rede. A autenticação sem senha é exclusiva desse banco descartável isolado, não uma configuração de produção. Cada execução cria um banco `portal_test_<timestamp>` e o mantém para inspeção. O runner testa a migração, o escopo equivalente ao JWT e as permissões SQL; não testa o serviço de e-mail ou o Supabase Auth hospedado.
 
-Resumo dos 25 testes Flutter e 28 verificações PostgreSQL em `docs/VERIFICATION.md`. Resultados detalhados em `docs/flutter-analyze-results.txt`, `docs/flutter-test-results.txt`, `docs/backend-test-results.txt` e `docs/web-build-results.txt`.
+Resultados da primeira versão (25 testes Flutter e 28 verificações PostgreSQL) e da preparação móvel (26 testes Flutter e APK verificado) em `docs/VERIFICATION.md`. Resultados detalhados em `docs/flutter-analyze-results.txt`, `docs/flutter-test-results.txt`, `docs/backend-test-results.txt` e `docs/web-build-results.txt`.
 
 ## Limites e próximos passos para uma escola real
 

@@ -1,0 +1,28 @@
+00:00 +0: loading C:/Users/PC-01/Documents/impactlab/test/domain_test.dart
+00:00 +0: C:/Users/PC-01/Documents/impactlab/test/domain_test.dart: Integrated publication, delivery, approval, reservation and pickup
+00:00 +1: C:/Users/PC-01/Documents/impactlab/test/domain_test.dart: Repeated approval is idempotent
+00:00 +2: C:/Users/PC-01/Documents/impactlab/test/domain_test.dart: Student cannot validate, publish, set rules or correct
+00:00 +3: C:/Users/PC-01/Documents/impactlab/test/domain_test.dart: Teacher is limited to assigned subject
+00:00 +4: C:/Users/PC-01/Documents/impactlab/test/domain_test.dart: Guardian validates only explicitly assigned family mission
+00:00 +5: C:/Users/PC-01/Documents/impactlab/test/domain_test.dart: Insufficient balance leaves stock unchanged
+00:00 +6: C:/Users/PC-01/Documents/impactlab/test/domain_test.dart: Concurrent attempts cannot double spend
+00:00 +7: C:/Users/PC-01/Documents/impactlab/test/domain_test.dart: Retry with same request is idempotent
+00:00 +8: C:/Users/PC-01/Documents/impactlab/test/domain_test.dart: Cancellation restores stock and available balance once
+00:00 +9: C:/Users/PC-01/Documents/impactlab/test/domain_test.dart: Pickup code cannot be reused or used after cancellation
+00:00 +10: C:/Users/PC-01/Documents/impactlab/test/domain_test.dart: Delivery sees no academic or wallet data
+00:00 +11: C:/Users/PC-01/Documents/impactlab/test/domain_test.dart: Personal reminders private even from guardian and coordination
+00:00 +12: C:/Users/PC-01/Documents/impactlab/test/domain_test.dart: Corrections preserve original ledger and cannot repeat
+00:00 +13: C:/Users/PC-01/Documents/impactlab/test/domain_test.dart: Single participation limit survives review request
+00:00 +14: C:/Users/PC-01/Documents/impactlab/test/domain_test.dart: Batch validation rolls back on forbidden delivery
+00:00 +15: C:/Users/PC-01/Documents/impactlab/test/domain_test.dart: Offline mutations rejected without state change
+00:00 +16: C:/Users/PC-01/Documents/impactlab/test/domain_test.dart: Late status is independent of completion and uses submission time
+00:00 +17: C:/Users/PC-01/Documents/impactlab/test/domain_test.dart: Daily participation, achievement and collective progress remain after spending
+00:00 +18: C:/Users/PC-01/Documents/impactlab/test/domain_test.dart: Retry after a lost response does not create a second reservation
+00:06 +19: C:/Users/PC-01/Documents/impactlab/test/mobile_scenario_test.dart: Mobile demo navigation, roles and text submission
+00:18 +20: C:/Users/PC-01/Documents/impactlab/test/mobile_scenario_test.dart: Mobile demo navigation, roles and text submission
+00:18 +21: C:/Users/PC-01/Documents/impactlab/test/mobile_scenario_test.dart: Mobile demo navigation, roles and text submission
+00:22 +22: C:/Users/PC-01/Documents/impactlab/test/mobile_scenario_test.dart: Mobile demo navigation, roles and text submission
+00:24 +23: C:/Users/PC-01/Documents/impactlab/test/mobile_scenario_test.dart: Mobile demo navigation, roles and text submission
+00:25 +24: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: All profiles and navigation fit Size(1440.0, 1000.0)
+00:26 +25: C:/Users/PC-01/Documents/impactlab/test/widget_test.dart: Student sends delivery through UI
+00:28 +26: All tests passed!

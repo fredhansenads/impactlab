@@ -23,3 +23,20 @@ Logs completos: `flutter-analyze-results.txt`, `flutter-test-results.txt`, `back
 - Compilação Web release concluída; prévia restrita a localhost respondeu HTTP 200 com o título ImpactLab. Nenhuma implantação pública realizada.
 - Logs desta alteração: `branding-analyze-results.txt`, `branding-test-results.txt` e `branding-web-build-results.txt`. Os testes PostgreSQL acima pertencem à primeira versão; não houve alteração no backend nesta adaptação visual.
 - Android e iOS continuam sem validação em dispositivo ou simulador neste ambiente.
+
+## Preparação móvel gratuita — 23/09/2026
+
+- Caminho escolhido: APK de demonstração para Android e prévia Web no Safari do iPhone. O usuário informou não ter acesso a Mac.
+- `flutter analyze`: sem problemas. `flutter test`: 26 testes aprovados, incluindo o roteiro compartilhado de navegação, cinco perfis e envio de texto em tela de 390 × 844.
+- Geração de assets: concluída. XML dos recursos Android e storyboard iOS: leitura sintática concluída sem erros. Isso não equivale à renderização do splash em aparelho.
+- Assinatura Android de distribuição separada da chave debug, com exigência de configuração local para release. Gradle limitado a 2 GB de heap e dois workers para computadores com pouca memória.
+- A primeira tentativa local de APK foi interrompida por nós após pressão de memória; a geração do pacote foi encaminhada ao workflow `Mobile demo` no GitHub. Ferramentas cmdline do Android SDK ainda precisam de configuração neste PC para `flutter doctor` ficar completo.
+- A verificação PostgreSQL no GitHub passou após ajustar a espera de inicialização do contêiner: o teste agora aguarda TCP loopback do servidor final, evitando o servidor temporário de inicialização.
+- `integration_test/mobile_smoke_test.dart` preparado para dispositivo/simulador: interface e registro do plugin de notificações sem solicitar permissão. Ainda não executado nativamente nesta etapa.
+- Simulador iOS fica opcional e desativado por padrão no workflow. Nenhum IPA assinado, teste em iPhone instalado, conta paga ou publicação de loja foi realizado.
+- Guia de uso: `MOBILE.md`. Logs locais: `mobile-analyze-results.txt`, `mobile-test-results.txt`.
+- APK Android compilado com sucesso no GitHub em 23/09/2026: [Mobile demo, execução 35893538128](https://github.com/fredhansenads/impactlab/actions/runs/35893538128), commit `319f9d68fe9caf5f0bea91df11412290a5609e0c`.
+- Artefato `ImpactLab-Android-demo`, ID `10766106094`: ZIP e APK baixados e conferidos por SHA-256. APK: `131309a59b83944d7a8d44af84d7a95194b11a0f95e30b52170559723436bf9a`, 161.403.580 bytes. Cópia local em `dist/android/app-debug.apk` (fora do Git).
+- `apksigner verify`: assinatura debug válida (APK Signature Scheme v2). `aapt`: ImpactLab 0.1.0+1, pacote `br.edu.portal.portal_escolar`, mínimo SDK 24, target SDK 36, arquiteturas armeabi-v7a/arm64-v8a/x86_64. MainActivity confirmada no DEX. Registro em `mobile-apk-verification.txt`.
+- APK disponibilizado temporariamente em `build/web/downloads/ImpactLab-demo.apk`, servido apenas pela rede local já utilizada na prévia. HTTP HEAD retornou 200 e o tamanho esperado. Uma nova compilação Web pode remover essa cópia; o pacote original permanece em dist.
+- [Verify, execução 35893537837](https://github.com/fredhansenads/impactlab/actions/runs/35893537837): Flutter e PostgreSQL concluídos com sucesso. O APK ainda não foi executado em aparelho Android; iOS nativo permanece não executado.

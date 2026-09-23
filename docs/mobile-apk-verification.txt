@@ -1,0 +1,24 @@
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): false
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: C=US, O=Android, CN=Android Debug
+Signer #1 certificate SHA-256 digest: 676d1a4e587526f4ca67c5a079a8a3d07a7635967e2a04eb5b5799dec469184e
+Signer #1 certificate SHA-1 digest: d806341d7bf133dd9bb2c0ab75bf992e65730cd8
+Signer #1 certificate MD5 digest: f78dab7a878b60031dc84bde9bb0fde2
+Signer #1 key algorithm: RSA
+Signer #1 key size (bits): 2048
+Signer #1 public key SHA-256 digest: 7a71bbbe61f1844e81c87fd04074c355bab551eb37b44a7fa8c2e98a4973b19c
+Signer #1 public key SHA-1 digest: 463857689ea81b1c84eaca8c53fba9e277dc35b7
+Signer #1 public key MD5 digest: 482129b66107342e559325ba1d7b08e0
+package: name='br.edu.portal.portal_escolar' versionCode='1' versionName='0.1.0' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'
+sdkVersion:'24'
+targetSdkVersion:'36'
+application-label:'ImpactLab'
+launchable-activity: name='br.edu.portal.portal_escolar.MainActivity'  label='' icon=''
+native-code: 'arm64-v8a' 'armeabi-v7a' 'x86_64'
+MainActivity presente no DEX
